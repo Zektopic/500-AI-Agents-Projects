@@ -15,11 +15,14 @@ permissions:
 
 jobs:
   markdown-lint:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, manupa-hnx]
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Configure Git safe directory
+        run: git config --global --add safe.directory '*'
 
       - name: Detect markdown changes
         id: changes
