@@ -9,10 +9,9 @@ Demonstrates the fundamentals of CrewAI:
 Run: python agent.py
 """
 
-from crewai import Agent, Crew, Process, Task
-from langchain_openai import ChatOpenAI
+from crewai import Agent, Crew, LLM, Process, Task
 
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.3)
+llm = LLM(model="gpt-4o-mini", temperature=0.3)
 
 # 1. Define the agent
 researcher = Agent(

@@ -13,15 +13,14 @@ Usage:
 import argparse
 import os
 
-from crewai import Agent, Crew, Process, Task
+from crewai import Agent, Crew, LLM, Process, Task
 from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
 
 load_dotenv()
 
 
 def build_email_crew(context: str, tone: str, recipient: str) -> str:
-    llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.3)
+    llm = LLM(model="gpt-4o-mini", temperature=0.3)
 
     analyst = Agent(
         role="Email Context Analyst",

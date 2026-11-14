@@ -13,15 +13,14 @@ Run: python agent.py --topic "quantum computing applications"
 import argparse
 import os
 
-from crewai import Agent, Crew, Process, Task
+from crewai import Agent, Crew, LLM, Process, Task
 from crewai.tools import BaseTool
 from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
 from pydantic import Field
 
 load_dotenv()
 
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.3)
+llm = LLM(model="gpt-4o-mini", temperature=0.3)
 
 
 # Custom Tool: Word Counter
