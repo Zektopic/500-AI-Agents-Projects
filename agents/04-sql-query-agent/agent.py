@@ -16,11 +16,10 @@ import sqlite3
 from urllib.parse import quote
 
 from dotenv import load_dotenv
+from langchain_classic.agents.agent_types import AgentType
+from langchain_community.agent_toolkits import SQLDatabaseToolkit, create_sql_agent
 from langchain_community.utilities import SQLDatabase
 from langchain_openai import ChatOpenAI
-from langchain.agents import create_sql_agent
-from langchain.agents.agent_toolkits import SQLDatabaseToolkit
-from langchain.agents.agent_types import AgentType
 
 load_dotenv()
 

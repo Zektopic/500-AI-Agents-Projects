@@ -12,15 +12,14 @@ Usage:
 import argparse
 import os
 
-from crewai import Agent, Crew, Process, Task
+from crewai import Agent, Crew, LLM, Process, Task
 from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
 
 load_dotenv()
 
 
 def generate_social_content(topic: str, brand: str, platforms: list[str]) -> str:
-    llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.7)
+    llm = LLM(model="gpt-4o-mini", temperature=0.7)
 
     strategist = Agent(
         role="Social Media Strategist",
